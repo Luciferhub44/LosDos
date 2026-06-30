@@ -12,7 +12,11 @@ const features = [
 ];
 
 export default function Home() {
-  const topDishes = [menu[0].dishes[0], menu[1].dishes[0], menu[2].dishes[1]];
+  const topDishes = [
+    { d: menu[0].dishes[0], img: "/img/dish-tacos.jpg" },
+    { d: menu[1].dishes[0], img: "/img/dish-burrito.jpg" },
+    { d: menu[2].dishes[1], img: "/img/dish-quesadilla.jpg" },
+  ];
 
   return (
     <>
@@ -74,13 +78,18 @@ export default function Home() {
           <Reveal as="h2">Nasze ulubione</Reveal>
         </div>
         <div className="grid grid-3" style={{ marginTop: 44 }}>
-          {topDishes.map((d, i) => (
-            <Reveal key={d.name} className="card" delay={i * 90}>
-              <h3 style={{ display: "flex", justifyContent: "space-between", gap: 12 }}>
-                <span>{d.name}</span>
-                <span style={{ color: "var(--red)" }}>{d.price}</span>
-              </h3>
-              <p>{d.desc}</p>
+          {topDishes.map(({ d, img }, i) => (
+            <Reveal key={d.name} className="card photo-card" delay={i * 90}>
+              <div className="photo-card-img">
+                <Image src={img} alt={d.name} fill sizes="(max-width: 900px) 100vw, 380px" />
+              </div>
+              <div className="photo-card-body">
+                <h3 style={{ display: "flex", justifyContent: "space-between", gap: 12 }}>
+                  <span>{d.name}</span>
+                  <span style={{ color: "var(--red)" }}>{d.price}</span>
+                </h3>
+                <p>{d.desc}</p>
+              </div>
             </Reveal>
           ))}
         </div>
