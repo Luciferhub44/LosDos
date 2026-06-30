@@ -26,57 +26,81 @@ export const hours: { day: string; open: string }[] = [
 
 export type Dish = {
   name: string;
-  desc: string;
+  desc?: string;
   price: string;
   tags?: ("ostre" | "wege" | "nowość")[];
 };
 
 export type MenuSection = { id: string; title: string; subtitle: string; dishes: Dish[] };
 
+// Menu transcribed from the restaurant's printed card (Los Dos Mexican bar).
 export const menu: MenuSection[] = [
   {
     id: "tacos",
-    title: "Tacos",
-    subtitle: "Na ręcznie robionych tortillach z kukurydzy",
+    title: "Tacosy",
+    subtitle: "Na miękkich tortillach, trzy sztuki w porcji",
     dishes: [
-      { name: "Tacos al Pastor", desc: "Marynowana wieprzowina, ananas, kolendra, cebula", price: "26 zł", tags: ["nowość"] },
-      { name: "Carnitas", desc: "Wolno duszona wieprzowina, salsa verde, limonka", price: "27 zł" },
-      { name: "Pollo Asado", desc: "Grillowany kurczak, chipotle, kremowy awokado", price: "25 zł" },
-      { name: "Tacos de Hongos", desc: "Pieczone grzyby, czarna fasola, queso fresco", price: "24 zł", tags: ["wege"] },
-      { name: "Barbacoa", desc: "Szarpana wołowina, ostra salsa roja, marynowana cebula", price: "29 zł", tags: ["ostre"] },
+      { name: "Pollo", desc: "Szarpany kurczak, mozzarella, piklowana czerwona cebula, sos mango-mięta, kolendra", price: "34 zł" },
+      { name: "Chorizo", desc: "Długo pieczona wieprzowina, grillowane chorizo, piklowana czerwona cebula, kapusta, sos chipotle, kolendra", price: "34 zł" },
+      { name: "Al Pastore", desc: "Wieprzowina adobo z grilla, świeży ananas, sos chipotle, piklowane jalapeño, kolendra", price: "34 zł" },
+      { name: "Krewetki", desc: "Smashowane krewetki, pasta z pomidorów San Marzano, guacamole, kapusta, kolendra, sos XO", price: "48 zł", tags: ["nowość"] },
+      { name: "Wege", desc: "Tofu achiote, mozzarella, frijoles refritos, sos chipotle, piklowana czerwona cebula, kolendra", price: "34 zł", tags: ["wege"] },
     ],
   },
   {
-    id: "burritos",
-    title: "Burritos",
-    subtitle: "Wielkie, soczyste, takich w życiu nie jadłeś",
+    id: "burrito",
+    title: "Burrito",
+    subtitle: "Pszenny placek z obfitym, mięsno-warzywnym farszem",
     dishes: [
-      { name: "Burrito Grande", desc: "Wołowina, ryż, fasola, ser, guacamole, salsa", price: "38 zł" },
-      { name: "Burrito Pollo", desc: "Kurczak, papryka, ryż, kremowy sos chipotle", price: "35 zł" },
-      { name: "Burrito Vegetariano", desc: "Bataty, czarna fasola, kukurydza, awokado", price: "33 zł", tags: ["wege"] },
-      { name: "Burrito Diablo", desc: "Wołowina, habanero, jalapeño, ostra salsa", price: "39 zł", tags: ["ostre"] },
+      { name: "Burrito", desc: "Szarpany kurczak, mozzarella, ryż rojo, frijoles refritos, kukurydza, piklowana cebula, kapusta, sos chipotle, kolendra", price: "42 zł" },
     ],
   },
   {
-    id: "quesadillas",
-    title: "Quesadillas & Más",
-    subtitle: "Roztopiony ser i chrupiąca tortilla",
+    id: "bowle",
+    title: "Bowle",
+    subtitle: "Miska pełna dobroci, bez tortilli",
     dishes: [
-      { name: "Quesadilla de Queso", desc: "Trzy sery, jalapeño, kremowa salsa", price: "28 zł", tags: ["wege"] },
-      { name: "Quesadilla Carne", desc: "Wołowina, ser, papryka, guacamole", price: "32 zł" },
-      { name: "Nachos Supremos", desc: "Chrupiące chipsy, ser, jalapeño, salsa, śmietana", price: "30 zł", tags: ["wege"] },
-      { name: "Elote", desc: "Pieczona kukurydza, majonez, cotija, chili, limonka", price: "18 zł", tags: ["wege"] },
+      { name: "Bowl z kurczakiem", desc: "Szarpany kurczak, ryż rojo, kukurydza, pikle, kolendra", price: "34 zł" },
+      { name: "Bowl z wieprzowiną", desc: "Szarpana wieprzowina, frytki, mozzarella, piklowana cebula, kolendra", price: "34 zł" },
+      { name: "Bowl wege", desc: "Tofu achiote, ryż rojo, mozzarella, pikle, kolendra", price: "34 zł", tags: ["wege"] },
     ],
   },
   {
-    id: "bebidas",
-    title: "Bebidas",
-    subtitle: "Napoje, które gaszą ogień",
+    id: "dodatki",
+    title: "Dodatki",
+    subtitle: "Do podzielenia się, albo nie",
     dishes: [
-      { name: "Margarita Clásica", desc: "Tequila, limonka, triple sec, sól", price: "24 zł" },
-      { name: "Agua de Jamaica", desc: "Mrożony napar z hibiskusa", price: "14 zł", tags: ["wege"] },
-      { name: "Horchata", desc: "Kremowy napój ryżowy z cynamonem", price: "15 zł", tags: ["wege"] },
-      { name: "Cerveza Mexicana", desc: "Corona / Modelo z limonką", price: "16 zł" },
+      { name: "Nachosy", price: "8 zł" },
+      { name: "Maślana kukurydza z tajín", price: "9 zł" },
+      { name: "Frytki", price: "12 zł" },
+      { name: "Frytki z batatów", price: "16 zł" },
+      { name: "Guacamole", price: "8 zł" },
+    ],
+  },
+  {
+    id: "salsy",
+    title: "Sosy i salsy",
+    subtitle: "Od łagodnych po piekielne",
+    dishes: [
+      { name: "Chipotle", price: "4 zł" },
+      { name: "Mango-mięta", price: "4 zł" },
+      { name: "Salsa verde", price: "4 zł" },
+      { name: "Salsa carolina reaper", price: "4 zł", tags: ["ostre"] },
+      { name: "Śmietana", price: "4 zł" },
+      { name: "Frijoles refritos", price: "4 zł" },
+    ],
+  },
+  {
+    id: "napoje",
+    title: "Napoje",
+    subtitle: "Coś do popicia",
+    dishes: [
+      { name: "Pomarańcza", price: "8 zł" },
+      { name: "Kiwi", price: "8 zł" },
+      { name: "Oranżada", price: "8 zł" },
+      { name: "Tonic", price: "8 zł" },
+      { name: "Woda gazowana", price: "7 zł" },
+      { name: "Woda niegazowana", price: "7 zł" },
     ],
   },
 ];

@@ -42,7 +42,7 @@ export default function MenuPage() {
                     {d.tags?.map((t) => <Tag key={t}>{t}</Tag>)}
                   </span>
                   <span className="dish-price">{d.price}</span>
-                  <p className="dish-desc">{d.desc}</p>
+                  {d.desc && <p className="dish-desc">{d.desc}</p>}
                 </Reveal>
               ))}
             </div>

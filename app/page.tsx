@@ -13,9 +13,9 @@ const features = [
 
 export default function Home() {
   const topDishes = [
-    { d: menu[0].dishes[0], img: "/img/dish-tacos.jpg" },
-    { d: menu[1].dishes[0], img: "/img/dish-burrito.jpg" },
-    { d: menu[2].dishes[1], img: "/img/dish-quesadilla.jpg" },
+    { d: menu[0].dishes[2], img: "/img/dish-tacos.jpg" },     // Al Pastore
+    { d: menu[1].dishes[0], img: "/img/dish-burrito.jpg" },   // Burrito
+    { d: menu[0].dishes[3], img: "/img/dish-krewetki.jpg" },  // Krewetki
   ];
 
   return (
