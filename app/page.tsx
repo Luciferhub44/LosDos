@@ -23,7 +23,7 @@ export default function Home() {
       {/* HERO */}
       <section className="hero">
         <div className="hero-photo" aria-hidden="true">
-          <Image src="/img/hero.png" alt="" fill priority sizes="100vw" />
+          <Image src="/img/hero.jpg" alt="" fill priority sizes="100vw" />
         </div>
         <div className="hero-scrim" aria-hidden="true" />
         <PapelPicado count={16} />

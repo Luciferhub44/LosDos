@@ -51,7 +51,7 @@ export default function AboutPage() {
             <Link className="btn btn-primary" href="/menu" style={{ marginTop: 8 }}>Zobacz, co gotujemy</Link>
           </Reveal>
           <Reveal className="about-photo" delay={120}>
-            <Image src="/img/about-interior.png" alt="Wnętrze restauracji Los Dos z papierowymi banerami papel picado" width={1400} height={1050} sizes="(max-width: 900px) 100vw, 50vw" />
+            <Image src="/img/about-interior.jpg" alt="Wnętrze restauracji Los Dos z papierowymi banerami papel picado" width={1400} height={1050} sizes="(max-width: 900px) 100vw, 50vw" />
           </Reveal>
         </div>
       </section>
