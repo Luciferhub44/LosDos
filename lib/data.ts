@@ -9,7 +9,7 @@ export const restaurant = {
   instagram: "https://www.instagram.com/losdos.poznan",
   instagramHandle: "@losdos.poznan",
   rating: 5,
-  reviewCount: 5013,
+  reviewCount: 113,
   mapsQuery: "Los Dos Mexican Restaurant, Zeylanda 12/2, 60-808 Poznań",
 };
 
