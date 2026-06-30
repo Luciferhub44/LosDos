@@ -8,7 +8,6 @@
   --red: #DC2626;
   --red-deep: #991B1B;
   --maroon: #450A0A;
-  --coral: #F87171;
   --gold: #A16207;
   --gold-bright: #F59E0B;
   --corn: #FBBF24;
@@ -18,7 +17,6 @@
   --blue: #2563EB;
 
   --bg: #FEF6EC;          /* warm masa / corn cream */
-  --bg-2: #FDECDB;
   --surface: #FFFFFF;
   --ink: #3A1208;         /* deep cocoa-red text */
   --ink-soft: #7C4A3A;
@@ -135,11 +133,6 @@ img { max-width: 100%; display: block; }
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
 }
 .brand { display: flex; align-items: center; gap: 12px; }
-.brand-mark {
-  display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px;
-  background: var(--red); color: var(--corn); font-size: 1.3rem;
-  box-shadow: var(--shadow-sm); transform: rotate(-6deg);
-}
 /* Real Canva logo badge, circular-cropped to hide square corners */
 .brand-logo {
   width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex: 0 0 auto;
@@ -187,14 +180,6 @@ img { max-width: 100%; display: block; }
     radial-gradient(110% 80% at 50% 38%, rgba(76, 5, 25, 0.55), transparent 70%),
     linear-gradient(180deg, rgba(40, 4, 8, 0.72) 0%, rgba(40, 4, 8, 0.45) 45%, rgba(40, 4, 8, 0.82) 100%);
 }
-/* radiating sun rays behind the headline */
-.hero-rays {
-  position: absolute; top: -30%; left: 50%; width: 140vmax; height: 140vmax;
-  transform: translateX(-50%); z-index: 0; opacity: 0.16;
-  background: repeating-conic-gradient(from 0deg, #fff 0deg 6deg, transparent 6deg 14deg);
-  animation: spin 80s linear infinite;
-}
-@keyframes spin { to { transform: translateX(-50%) rotate(360deg); } }
 .hero-content {
   position: relative; z-index: 2; max-width: var(--max); margin: 0 auto;
   padding: clamp(60px, 11vw, 130px) 24px clamp(70px, 11vw, 120px);

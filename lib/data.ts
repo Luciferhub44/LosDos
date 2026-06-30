@@ -3,7 +3,6 @@
 export const restaurant = {
   name: "Los Dos",
   tagline: "Auténtica cocina mexicana en el corazón de Poznań",
-  taglineEn: "Authentic Mexican kitchen in the heart of Poznań",
   address: "Zeylanda 12/2, 60-808 Poznań",
   phone: "791 327 482",
   phoneHref: "tel:+48791327482",
